@@ -1,0 +1,26 @@
+@mixin btn-modificator ($color) {
+    background-color: $color;
+    box-shadow: 0 7px 17px -10px rgba($color, 0.2%);
+
+    &:hover {
+        background-color: darken($color, 5%);
+    }
+}
+
+.btn {
+    padding: 1.1em 2.1em; // from 12px * 1,1 = 13,2; 12px * 2,1 = 25,2
+    background-color: $secondary;
+    border-radius: 2.1em;
+    font-size: 1.2rem;  // 12px
+    color: $light;
+
+    transition: background-color .2s linear;
+
+    &--red {
+        @include btn-modificator($red)
+    }
+
+    &--blue {
+        @include btn-modificator($blue)
+    }
+}
